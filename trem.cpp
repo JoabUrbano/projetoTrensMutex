@@ -27,7 +27,7 @@ void Trem::run(){
         else{
             switch(ID){
                 case 1:     //No caso do Trem 1
-                    if(x==310 && y==30){
+                    /*if(x==310 && y==30){
                         deadlock3.tryAcquire(1);
                         while(deadlock3.available() == 0);
 
@@ -55,7 +55,7 @@ void Trem::run(){
                     if(x==160 && y==150){
                         waitRegiao3.wakeAll();
                         mutexRegiao3.unlock();
-                    }
+                    }*/
 
                     if (x == 330 && y < 330){
                         y+=10;
@@ -76,7 +76,7 @@ void Trem::run(){
 
 
                 case 2: //No caso do Trem 2
-                    if(x==350 && y==30){
+                    /*if(x==350 && y==30){
                         waitRegiao1.wakeAll();
                         mutexRegiao1.unlock();
                     }
@@ -137,18 +137,18 @@ void Trem::run(){
 
                     if(x==500 && y==30){
                         cruzamentoCritico1.release(1);
-                    }
+                    }*/
 
-                    if (y == 30 && x < 600){
+                    if (y == 210 && x < 600){
                         x+=10;
                     }
-                    else if (x == 600 && y < 150){
+                    else if (x == 600 && y < 330){
                         y+=10;
                     }
-                    else if (x > 330 && y == 150){
+                    else if (x > 330 && y == 330){
                         x-=10;
                     }
-                    else{
+                    else if (x == 330 && y > 210){
                         y-=10;
                     }
                     emit updateGUI(ID,x,y);    //Emite um sinal
@@ -156,7 +156,7 @@ void Trem::run(){
 
 
                 case 3: //No caso do Trem 3
-                    if(x==620 && y==150){
+                    /*if(x==620 && y==150){
                         mutexRegiao2.lock();
                     }
 
@@ -184,7 +184,7 @@ void Trem::run(){
                         cruzamentoCritico2.release(1);
                         waitRegiao6.wakeAll();
                         mutexRegiao6.unlock();
-                    }
+                    }*/
 
                     if (y == 30 && x < 870){
                         x+=10;
@@ -203,7 +203,7 @@ void Trem::run(){
 
 
                 case 4: //No caso do Trem 4
-                    if(x==445 && y==150){
+                    /*if(x==445 && y==150){
                         mutexRegiao7.lock();
                     }
 
@@ -253,7 +253,7 @@ void Trem::run(){
                         deadlock3.release(1);
                         deadLock1.release(1);
                         cruzamentoCritico1.release(1);
-                    }
+                    }*/
 
                     if (y == 150 && x < 475){
                         x+=10;
@@ -272,7 +272,7 @@ void Trem::run(){
 
 
                 case 5: //No caso do Trem 5
-                    if(x==495 && y==270){
+                    /*if(x==495 && y==270){
                         deadlock3.tryAcquire(1);
                         while(deadlock3.available() == 0);
 
@@ -315,7 +315,7 @@ void Trem::run(){
                         cruzamentoCritico2.release(1);
                         waitRegiao5.wakeAll();
                         mutexRegiao5.unlock();
-                    }
+                    }*/
 
                     if (y == 150 && x < 745){
                         x+=10;
