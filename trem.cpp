@@ -57,18 +57,20 @@ void Trem::run(){
                         mutexRegiao3.unlock();
                     }
 
-                    if (y == 30 && x < 330){
-                        x+=10;
-                    }
-                    else if (x == 330 && y < 150){
+                    if (x == 330 && y < 330){
                         y+=10;
                     }
-                    else if (x > 60 && y == 150){
-                        x-=10;
+
+                    else if (y == 210 && x < 330){
+                        x+=10;
                     }
-                    else{
+                    else if (x == 60 && y > 210){
                         y-=10;
                     }
+                    else if (x > 60 && y == 330){
+                        x-=10;
+                    }
+
                     emit updateGUI(ID,x,y);    //Emite um sinal
                     break;
 
