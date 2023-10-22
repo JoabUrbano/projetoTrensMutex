@@ -255,16 +255,16 @@ void Trem::run(){
                         cruzamentoCritico1.release(1);
                     }*/
 
-                    if (y == 150 && x < 475){
+                    if (x < 470 && y == 80){
                         x+=10;
                     }
-                    else if (x >= 475 && y < 270){
+                    else if (x == 470 && y < 210){
                         y+=10;
                     }
-                    else if (x > 205 && y == 270){
+                    else if (x > 200 && y == 210){
                         x-=10;
                     }
-                    else{
+                    else if (x == 200 && y > 80){
                         y-=10;
                     }
                     emit updateGUI(ID, x,y);    //Emite um sinal
@@ -317,16 +317,16 @@ void Trem::run(){
                         mutexRegiao5.unlock();
                     }*/
 
-                    if (y == 150 && x < 745){
+                    if (x < 740 && y == 80){
                         x+=10;
                     }
-                    else if (x == 745 && y < 270){
+                    else if (x == 740 && y < 210){
                         y+=10;
                     }
-                    else if (x > 475 && y == 270){
+                    else if (x > 470 && y == 210){
                         x-=10;
                     }
-                    else{
+                    else if (x == 470 && y > 80){
                         y-=10;
                     }
                     emit updateGUI(ID,x,y);    //Emite um sinal
