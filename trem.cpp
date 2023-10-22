@@ -1,13 +1,28 @@
 #include "trem.h"
+#include <stdio.h>
+#include <pthread.h>
+#include <time.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <QMutex>
 #include <QWaitCondition>
 #include <QtCore>
 #include <QSemaphore>
 
+QMutex mutex01;
+QMutex mutex02;
+
+
+
+
+/*
+
 QMutex mutexRegiao1, mutexRegiao2,mutexRegiao3, mutexRegiao4, mutexRegiao5, mutexRegiao6, mutexRegiao7;
 QWaitCondition waitRegiao1, waitRegiao2, waitRegiao3, waitRegiao4, waitRegiao5, waitRegiao6, waitRegiao7;
 QSemaphore cruzamentoCritico1(2), cruzamentoCritico2(2), cruzamentoCritico3(2);
 QSemaphore deadLock1(3), deadlock2(3), deadlock3(4);
+*/
+
 
 //Construtor dos trens
 Trem::Trem(int ID, int x, int y){
@@ -57,6 +72,15 @@ void Trem::run(){
                         mutexRegiao3.unlock();
                     }*/
 
+                    if(x == 180 && y == 210) {
+                        mutex01.lock();
+                    }
+
+                    if ( x == 330 && y == 230){
+                        mutex01.unlock();
+                    }
+
+                    // Movimentacao
                     if (x == 330 && y < 330){
                         y+=10;
                     }
@@ -255,6 +279,14 @@ void Trem::run(){
                         cruzamentoCritico1.release(1);
                     }*/
 
+                    if(x == 350 && y == 210) {
+                        mutex01.lock();
+                    }
+                    if(x == 200 && y == 190) {
+                        mutex01.unlock();
+                    }
+
+                    // Mivimentacao
                     if (x < 470 && y == 80){
                         x+=10;
                     }
