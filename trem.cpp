@@ -13,6 +13,7 @@ QMutex mutex01;
 QMutex mutex02;
 QMutex mutex03;
 QMutex mutex04;
+QMutex mutex05;
 
 int vef = 0;
 
@@ -80,13 +81,13 @@ void Trem::run(){
                         mutex03.lock();
                     }
                     if(x == 490 && y == 210) {
-                        mutex03.unlock();
+                         mutex03.unlock();
                     }
                     if(x == 450 && y == 210) {
                          mutex04.lock();
                     }
                     if(x == 600 && y == 230) {
-                        mutex04.unlock();
+                         mutex04.unlock();
                     }
 
                     // Movimentacao
@@ -107,6 +108,20 @@ void Trem::run(){
 
 
                 case 3: //No caso do Trem 3
+                    if(x == 600 && y == 330) {
+                        mutex04.lock();
+                    }
+                    if(x == 620 && y == 210) {
+                        mutex04.unlock();
+                    }
+                    if(x == 600 && y == 230) {
+                        mutex05.lock();
+                    }
+                    if(x == 760 && y == 210) {
+                        mutex05.unlock();
+                    }
+
+                    // Movimentacao
 
                     if (x < 870 && y == 210){
                         x+=10;
@@ -125,8 +140,6 @@ void Trem::run(){
 
 
                 case 4: //No caso do Trem 4
-
-
                     if(x == 470 && y == 190) {
                         mutex01.lock();
                     }
@@ -164,11 +177,17 @@ void Trem::run(){
                     if(x == 490 && y == 80) {
                         mutex03.unlock();
                     }
-                    if(x == 620 && y == 210) {
+                    if(x == 740 && y == 190) {
                          mutex04.lock();
                     }
                     if(x == 470 && y == 190) {
-                        mutex04.unlock();
+                         mutex04.unlock();
+                    }
+                    if(x == 740 && y == 190) {
+                         mutex05.lock();
+                    }
+                    if(x == 580 && y == 210) {
+                         mutex05.unlock();
                     }
 
 
