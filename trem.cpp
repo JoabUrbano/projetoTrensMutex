@@ -76,8 +76,16 @@ void Trem::run(){
                         mutex01.lock();
                     }
 
-                    if ( x == 330 && y == 230){
+                    if( x == 330 && y == 230) {
                         mutex01.unlock();
+                    }
+
+                    if(x == 310 && y == 210) {
+                        mutex02.lock();
+                    }
+
+                    if(x == 310 && y == 330) {
+                        mutex02.unlock();
                     }
 
                     // Movimentacao
@@ -162,6 +170,13 @@ void Trem::run(){
                     if(x==500 && y==30){
                         cruzamentoCritico1.release(1);
                     }*/
+
+                    if(x == 350 && y == 330) {
+                        mutex02.lock();
+                    }
+                    if(x == 350 && y == 210) {
+                        mutex02.unlock();
+                    }
 
                     if (x < 600 && y == 210){
                         x+=10;
@@ -279,7 +294,7 @@ void Trem::run(){
                         cruzamentoCritico1.release(1);
                     }*/
 
-                    if(x == 350 && y == 210) {
+                    if(x == 470 && y == 190) {
                         mutex01.lock();
                     }
                     if(x == 200 && y == 190) {
