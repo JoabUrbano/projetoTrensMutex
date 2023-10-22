@@ -14,6 +14,7 @@ QMutex mutex02;
 QMutex mutex03;
 QMutex mutex04;
 QMutex mutex05;
+QMutex mutex06;
 
 int vef = 0;
 
@@ -79,15 +80,23 @@ void Trem::run(){
                     }
                     if(x == 330 && y == 230) {
                         mutex03.lock();
+                        mutex04.lock();
                     }
                     if(x == 490 && y == 210) {
                          mutex03.unlock();
+                         mutex04.unlock();
                     }
-                    if(x == 450 && y == 210) {
+                    /*if(x == 450 && y == 210) {
                          mutex04.lock();
                     }
                     if(x == 600 && y == 230) {
                          mutex04.unlock();
+                    }*/
+                    if(x == 580 && y == 210) {
+                         mutex06.lock();
+                    }
+                    if(x == 580 && y == 330) {
+                         mutex06.unlock();
                     }
 
                     // Movimentacao
@@ -108,7 +117,7 @@ void Trem::run(){
 
 
                 case 3: //No caso do Trem 3
-                    if(x == 600 && y == 330) {
+                    if(x == 620 && y == 330) {
                         mutex04.lock();
                     }
                     if(x == 620 && y == 210) {
@@ -119,6 +128,12 @@ void Trem::run(){
                     }
                     if(x == 760 && y == 210) {
                         mutex05.unlock();
+                    }
+                    if(x == 620 && y == 330) {
+                         mutex06.lock();
+                    }
+                    if(x == 610 && y == 210) {
+                         mutex06.unlock();
                     }
 
                     // Movimentacao
@@ -146,10 +161,10 @@ void Trem::run(){
                     if(x == 200 && y == 190) {
                         mutex01.unlock();
                     }
-                    if(x == 470 && y == 190) {
+                    if(x == 450 && y == 80) {
                         mutex03.lock();
                     }
-                    if(x == 310 && y == 210) {
+                    if(x == 450 && y == 210) {
                         mutex03.unlock();
                     }
 
@@ -180,7 +195,7 @@ void Trem::run(){
                     if(x == 740 && y == 190) {
                          mutex04.lock();
                     }
-                    if(x == 470 && y == 190) {
+                    if(x == 580 && y == 210) {
                          mutex04.unlock();
                     }
                     if(x == 740 && y == 190) {
