@@ -9,6 +9,7 @@
 #include <QtCore>
 #include <QSemaphore>
 
+// Criacao dos pontos criticos
 QMutex mutex01;
 QMutex mutex02;
 QMutex mutex03;
@@ -17,8 +18,6 @@ QMutex mutex05;
 QMutex mutex06;
 QMutex mutex07;
 QMutex mutex08;
-
-int vef = 0;
 
 //Construtor dos trens
 Trem::Trem(int ID, int x, int y){
@@ -37,7 +36,7 @@ void Trem::run(){
         }
         else{
             switch(ID){
-                case 1:     //No caso do Trem 1
+                case 1: //No caso do Trem 1
                     if(x == 180 && y == 210) {
                         mutex01.lock();
                         mutex02.lock();
