@@ -353,7 +353,7 @@
      <string notr="true">selection-background-color: blue;</string>
     </property>
     <property name="maximum">
-     <number>200</number>
+     <number>150</number>
     </property>
     <property name="singleStep">
      <number>1</number>
@@ -399,7 +399,7 @@
      <number>0</number>
     </property>
     <property name="maximum">
-     <number>200</number>
+     <number>150</number>
     </property>
     <property name="value">
      <number>100</number>
@@ -433,7 +433,7 @@
      <number>0</number>
     </property>
     <property name="maximum">
-     <number>200</number>
+     <number>150</number>
     </property>
     <property name="value">
      <number>100</number>
@@ -464,7 +464,7 @@
      <string notr="true">selection-background-color: purple;</string>
     </property>
     <property name="maximum">
-     <number>200</number>
+     <number>150</number>
     </property>
     <property name="value">
      <number>100</number>
@@ -495,7 +495,7 @@
      <string notr="true">selection-background-color: orange;</string>
     </property>
     <property name="maximum">
-     <number>200</number>
+     <number>150</number>
     </property>
     <property name="value">
      <number>100</number>

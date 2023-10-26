@@ -78,7 +78,7 @@ void Trem::run(){
                     if(x == 350 && y == 330) {
                         mutex02.lock();
                     }
-                    if(x == 350 && y == 210) {
+                    if(x == 490 && y == 210) {
                         mutex02.unlock();
                     }
                     if(x == 330 && y == 230) {
